@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+<table border=0>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+        <th>Date Created</th>
+    <tr>
+        {% for item in result %}
+    <tr>
+        <form action="{{ url_for('employeeInfo')}}" method="post">
+            <td name="first_name"><button name ="button" type ="submit" value={{item[0]}} class="btn btn-link text-body btn-outline-light shadow-none"><font class="text-body">{{ item[0] }}</font></button></td>
+            <td name="last_name"><button name ="button" type ="submit" value={{item[1]}} class="btn btn-link text-body btn-outline-light shadow-none"><font class="text-body">{{ item[1] }}</font></button></td>
+            <td name="username"><button name ="button" type ="submit" value={{item[2]}} class="btn btn-link text-body btn-outline-light shadow-none"><font class="text-body">{{ item[2] }}</font></button></td>
+            <td>{{item[3]}}</td>
+        </form>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

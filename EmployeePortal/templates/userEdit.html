@@ -1,0 +1,33 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <div id="container" style="margin:20px" align="center" class="col">
+            <h1>Edit User Info</h1>
+            <h3>{{message}}</h3>
+            <form action="{{ url_for('updateUser')}}" method="post">
+                <div class="form-group">
+                    <p><b>First Name: </b><input type="text" class="form-control" name="fname" value="{{employee.first_name}}"/></p>
+                    <p><b>Last Name: </b><input type="text" class="form-control" name="lname" value="{{ employee.last_name }}" /></p>
+                    <p><b>Username: </b><input type="text" class="form-control" name="uname" value="{{ employee.username }}" /></p>
+                    <p><b>Password: </b><input type="password" class="form-control" name="pword" value="{{ employee.password }}" /></p>
+                    <p><b>Age: </b><input type="text" class="form-control" name="age" value="{{ employee.age }}" /></p>
+                    <p><b>Email: </b><input type="text" class="form-control" name="email" value="{{ employee.email }}"/></p>
+                    <p><b>Contact Number: </b><input type="text" class="form-control" name="contact_number" value="{{ employee.contact_number }}"/></p>
+                    <p><b>Address: </b><input type="text" class="form-control" name="address" value="{{ employee.address }}"/></p>
+                    <p><b>Rate: </b><input type="text" class="form-control" name="rate" value="{{ employee.rate }}"/></p>
+                    <p><b>Shif tid: </b><input type="text" class="form-control" name="shiftId" value="{{ employee.shift_id }}"/></p>
+                    <p><b>Salary Type: </b><input type="text" class="form-control" name="salaryType" value="{{ employee.salary_type_id }}"/></p>
+                    <p>
+                        <b>Admin Rights: Yes </b><input type="radio" name="admin_rights" value="Yes" />
+                        <b>No </b><input type="radio" name="admin_rights" value="No" checked />
+                    </p>
+                </div>
+                <button type="submit" class="btn bg-dark btn-sm mr-sm-2 mb-2 text-white" name="btn_submit" value={{ employee.id }}>Submit</button>
+                <input type="submit" class="btn bg-dark btn-sm mr-sm-2 mb-2 text-white" value="Cancel" />
+            </form>
+            <br />
+        </div>
+    </div>
+</div>
+{% endblock %}

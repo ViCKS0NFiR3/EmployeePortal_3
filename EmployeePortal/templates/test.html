@@ -1,0 +1,38 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="table-responsive">
+        <form action="{{ url_for('employeeInfo')}}" method="post">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Date Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+
+                        <td>{{ loop.index + (page - 1) * per_page }}</td>
+                        <td onclick="getId(this)" name="first_name"><button name="button" type="submit" value={{user.id}} class="btn btn-link text-body btn-outline-light shadow-none"><font class="text-body">{{ user.first_name }}</font></button></td>
+                        <td onclick="getId(this)" name="last_name"><button name="button" type="submit" value={{user.id}} class="btn btn-link text-body btn-outline-light shadow-none"><font class="text-body">{{ user.last_name }}</font></button></td>
+                        <td onclick="getId(this)" name="username"><button name="button" type="submit" value={{user.id}} class="btn btn-link text-body btn-outline-light shadow-none"><font class="text-body">{{ user.username }}</font></button></td>
+                        <td onclick="getId(this)">{{user.date_created}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </div>
+    {{ pagination.links }}
+</div>
+    {% endblock %}
+
+    {% block scripts %}
+   
+    {% endblock %}

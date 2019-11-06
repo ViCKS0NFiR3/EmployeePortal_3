@@ -1,0 +1,34 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <div id="container" style="margin:20px" align="center" class="col">
+            <h1>Sign-Up</h1>
+            <form action="{{ url_for('signup_auth')}}" method="post">
+                <div class="form-group">
+                    <p><b>First Name: </b><input type="text" class="form-control" name="fname" /></p>
+                    <p><b>Last Name: </b><input type="text" class="form-control" name="lname" /></p>
+                    <p><b>Username: </b><input type="text" class="form-control" name="uname" /></p>
+                    <p><b>Password: </b><input type="password" class="form-control" name="pword" /></p>
+                    <p><b>Confirm Password: </b><input type="password" class="form-control" name="pwordConf" /></p>
+                    <p><b>Age: </b><input type="text" class="form-control" name="age" /></p>
+                    <p><b>Email: </b><input type="text" class="form-control" name="email" /></p>
+                    <p><b>Contact Number: </b><input type="text" class="form-control" name="contact_number" /></p>
+                    <p><b>Address: </b><input type="text" class="form-control" name="address" /></p>
+                    <p><b>Rate: </b><input type="text" class="form-control" name="rate" /></p>
+                    <p><b>Shif tid: </b><input type="text" class="form-control" name="shiftId" /></p>
+                    <p><b>Salary Type: </b><input type="text" class="form-control" name="salaryType" /></p>
+                    <p><b>Admin Rights: Yes </b><input type="radio" name="admin_rights" value="Yes"/>
+                    <b>No </b><input type="radio" name="admin_rights" value="No" checked/></p>
+                </div>
+                <button type="submit" class="btn bg-dark btn-sm mr-sm-2 mb-2 text-white">Submit</button>
+                <input type="reset" class="btn bg-dark btn-sm mr-sm-2 mb-2 text-white" value="Reset"/>
+            </form>
+            <br/>
+            <!--<div id="login">
+                <a href="{{ url_for('login')}}"> Already have an account, Log-in</a>
+            </div>-->
+        </div>
+    </div>
+</div>
+{% endblock %}

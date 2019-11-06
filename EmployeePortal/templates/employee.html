@@ -1,0 +1,53 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<h3>{{ message }}</h3>
+
+    <table>
+        <tr>
+            <td>First Name: {{result.first_name}}</td>
+        </tr>
+        <tr>
+            <td>Last Name: {{result.last_name}}</td>
+        </tr>
+        <tr>
+            <td>Username: {{result.username}}</td>
+        </tr>
+        <tr>
+            <td>Age: {{result.age}}</td>
+        </tr>
+        <tr>
+            <td>Email: {{result.email}}</td>
+        </tr>
+        <tr>
+            <td>Address: {{result.address}}</td>
+        </tr>
+        <tr>
+            <td>Contact Number: {{result.contact_number}}</td>
+        </tr>
+        <tr>
+            <td>Shift: {{result.shift_id}}</td>
+        </tr>
+        <tr>
+            <td>Rate: {{result.rate}}</td>
+        </tr>
+        <tr>
+            <td>Salary Type: {{result.salary_type}}</td>
+        </tr>
+        <tr>
+            <td>Is Admin: {{result.is_admin}}</td>
+        </tr>
+        <tr>
+            <td>Date Created: {{result.date_created}}</td>
+        </tr>
+        <tr>
+            <td>Last Updated: {{result.last_updated}}</td>
+        </tr>
+    </table>
+    <br/>
+    <form action="{{ url_for('editUser') }}" method="post">
+        <button type="submit" class="btn bg-dark btn-sm mr-sm-2 mb-2 text-white" name="btn_action" value="{{result.id}}"><b>Edit</b></button>
+        <input type="submit" class="btn bg-dark btn-sm mr-sm-2 mb-2 text-white" name="btn_action" value="Go Back to Users" />
+    </form>
+{% endblock %}
+
