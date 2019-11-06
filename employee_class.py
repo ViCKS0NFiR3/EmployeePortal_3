@@ -20,7 +20,7 @@ class Employee_class():
             employeeEdit.address = employeeInfoDict["address"]
             employeeEdit.rate = employeeInfoDict["rate"]
             employeeEdit.shift_id = employeeInfoDict["shift_id"]
-            employeeEdit.salary_type = employeeInfoDict["salary_type"]
+            employeeEdit.salary_type_id = employeeInfoDict["salary_type"]
             employeeEdit.is_admin = employeeInfoDict["is_admin"]
             db.session.commit()
             message = "User Information Updated Successfully."

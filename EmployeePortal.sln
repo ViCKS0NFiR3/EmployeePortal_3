@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "EmployeePortal", "EmployeePortal.pyproj", "{CDC812D9-6983-4112-9FEE-3AD3928C9ACE}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "EmployeePortal", "EmployeePortal\EmployeePortal.pyproj", "{CDC812D9-6983-4112-9FEE-3AD3928C9ACE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
