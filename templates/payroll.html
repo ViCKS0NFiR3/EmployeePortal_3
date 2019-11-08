@@ -6,7 +6,6 @@
 <h3>{{ message }}</h3>
 
 <form action="{{ url_for('time_in') }}" method="post">
-    <h1>Login</h1>
     <div class="form-group">
         <p><b><input type="button" id="time_in_radio" name="clock" onclick="time_in_check()" value="Time in" checked></b></p>
         <p><b><input type="button" id="time_out_radio" name="clock" onclick="time_out_check()" value="Time out"><br></b></p>
@@ -14,18 +13,6 @@
         <p><input type="submit" id="btn_time_out" class="form-control" name="clk_btn" value="Time out" /></p>
     </div>
 </form>
-<form class="range-field" action="{{ url_for('time_in') }}">
-    <input type="range" min="0" max="1" />
-</form>
-<div class="custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" id="customSwitch1">
-    <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
-</div>
-<div class="custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
-    <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
-</div>
-<input id="toggle-one" checked type="checkbox">
 {% endblock %}
 
 {% block scripts %}

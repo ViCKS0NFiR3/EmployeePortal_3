@@ -22,25 +22,32 @@ class Employees(UserMixin, db.Model):
     shift_id = db.Column(db.Integer(),db.ForeignKey('work_shifts.id'), nullable=False)
     last_updated = db.Column(db.DateTime(), default=datetime.now())
     salary_type_id = db.Column(db.Integer(),db.ForeignKey('salary_type.id'), nullable=False)
+    restDay = db.Column(db.String(15),db.ForeignKey('restday.id'))
     is_admin = db.Column(db.String(25), default=False)
+# ADD RESTDAY TO EMPLOYEES    
 
 class Employee_attendance(db.Model):
     id = db.Column(db.Integer,primary_key=True)
-    business_date = db.Column(db.DateTime(), default = datetime.now().strftime("%x"))
+    business_date = db.Column(db.Date(), default = datetime.now().date())
     employee_id = db.Column(db.Integer())
     time_in = db.Column(db.Time(), default=datetime.now().time())
-    time_out = db.Column(db.Time(), default=datetime.now().time())
+    time_out = db.Column(db.Time())
     employee_status_id = db.Column(db.Integer(),db.ForeignKey('employee_status.id'), nullable=False)
     date_created = db.Column(db.DateTime(), default=datetime.now())
     last_updated = db.Column(db.DateTime(), default=datetime.now())
     penalty = db.Column(db.Integer())
+    remarks = db.Column(db.String(15))
+#ADD REMARKS TO EMPLOYEE ATTENDANCE
+
 
 class work_shifts(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    shift_name = db.Column(db.String())
+    shift_name = db.Column(db.String(10))
     time_in = db.Column(db.Time())
     time_out = db.Column(db.Time())
+    grace_period = db.Column(db.Time())
     reference = db.relationship('Employees', backref='work_shifts' , lazy='joined')
+# ADD GRACE PERIOD
 
 class Employee_status(db.Model):
     id =  db.Column(db.Integer, primary_key = True)
@@ -51,3 +58,8 @@ class Salary_type(db.Model):
     id =  db.Column(db.Integer, primary_key = True)
     type_definition = db.Column(db.String())
     reference = db.relationship('Employees', backref='salary_type' , lazy='joined')
+
+class Restday(db.Model):
+    id =  db.Column(db.Integer, primary_key = True)
+    day = db.Column(db.String(15))
+    reference = db.relationship('Employees', backref='restday' , lazy='joined')
